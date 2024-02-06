@@ -1,0 +1,16 @@
+# 配置文件
+Chests:
+  #自动生成示例
+  A:
+    X: 111
+    Y: 111
+    Z: 111
+    BindID: "xxxx" #绑定的战利品表
+    LootsNumber: 0 #刷新的战利品数量
+ChestList:
+  - "A"
+Loots:
+  #战利品
+  "xxxx":
+    - "DIAMOND"
+    - "DIAMOND_BLOCK"
