@@ -29,18 +29,19 @@ public class Refresh implements Listener {
             @Override
             public void run() {
                 List<String> chestList = config.getStringList("ChestList");
-                for (String UUID : chestList){
-                    int X = config.getInt("Chest." + UUID + ".X");
-                    int Y = config.getInt("Chest." + UUID + ".Y");
-                    int Z = config.getInt("Chest." + UUID + ".Z");
-                    java.util.UUID wuid = java.util.UUID.fromString(Objects.requireNonNull(config.getString("Chest." + UUID + ".World")));
-                    World world = Bukkit.getWorld(wuid);
-                    Location location = new Location(world, X, Y, Z);
-                    Block block = location.getBlock();
-                    if (block.getType() == Material.CHEST) {
-                        chest = (Chest) block;
+                int i = 0;
+                while (i < chestList.size()){
+                    if (chestList.get(i) == null){
+                        Bukkit.broadcastMessage("§c[CustomLootable]§r 战利品刷新失败！");
+                        Bukkit.getScheduler().cancelTasks(CustomLootable.getPlugin(CustomLootable.class));
                     }
-                    String BindID = config.getString("Chest." + UUID + ".BindID");
+                    int X = config.getInt("Chests." + chestList.get(i) + ".X");
+                    int Y = config.getInt("Chests." + chestList.get(i) + ".Y");
+                    int Z = config.getInt("Chests." + chestList.get(i) + ".Z");
+                    World world = Bukkit.getWorld(java.util.UUID.fromString(Objects.requireNonNull(config.getString("Chests." + chestList.get(i) + ".World"))));
+                    Location location = new Location(world, X, Y, Z);
+                    chest = (Chest) location.getBlock().getState();
+                    String BindID = config.getString("Chests." + chestList.get(i) + ".BindID");
                     int Max = lootable.getInt("Loots." + BindID + ".Max");
                     int Min = lootable.getInt("Loots." + BindID + ".Min");
                     List<String> items = lootable.getStringList("Loots." + BindID + ".items");
@@ -48,6 +49,7 @@ public class Refresh implements Listener {
                         int amount = (int) Math.floor(Math.random() * (Max - Min + 1) + Min);
                         chest.getInventory().addItem(new ItemStack(Material.valueOf(item), amount));
                     }
+                    i++;
                 }
                 Bukkit.broadcastMessage("§a[CustomLootable]§r 战利品刷新完成！");
             }

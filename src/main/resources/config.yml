@@ -1,11 +1,4 @@
 # 配置文件
 Chests:
-  #自动生成示例
-  A:
-    World: 0
-    X: 111
-    Y: 111
-    Z: 111
-    BindID: "xxxx" #绑定的战利品表
+
 ChestList:
-  - "A"

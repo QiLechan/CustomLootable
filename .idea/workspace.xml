@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff0435d2-50b9-4b24-8234-271a52d8982e" name="更改" comment="初始提交">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/command/Bind.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/task/Refresh.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/lootable.yml" afterDir="false" />
+    <list default="true" id="ff0435d2-50b9-4b24-8234-271a52d8982e" name="更改" comment="提交">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/CustomLootable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/CustomLootable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/event/onLeftCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/event/onLeftCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/task/Refresh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/task/Refresh.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,17 +40,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "project.structure.last.edited": "SDK",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDK&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
@@ -117,11 +112,19 @@
       <option name="project" value="LOCAL" />
       <updated>1707228034776</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="提交">
+      <created>1707296669181</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707296669181</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始提交" />
+    <MESSAGE value="提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交" />
   </component>
 </project>
