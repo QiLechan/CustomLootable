@@ -1,5 +1,12 @@
 package org.yuezhikong.plugins.event;
 
+import net.md_5.bungee.api.ChatColor;
+import net.md_5.bungee.api.chat.BaseComponent;
+import net.md_5.bungee.api.chat.ClickEvent;
+import net.md_5.bungee.api.chat.HoverEvent;
+import net.md_5.bungee.api.chat.TextComponent;
+import net.md_5.bungee.api.chat.hover.content.Text;
+import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -27,6 +34,7 @@ public class onLeftCheck implements Listener {
                 int X = event.getClickedBlock().getX();
                 int Y = event.getClickedBlock().getY();
                 int Z = event.getClickedBlock().getZ();
+                String world = event.getPlayer().getWorld().getUID().toString();
                 List<String> chestList = config.getStringList("ChestList");
                 for (String UUID : chestList){
                     if ((config.getInt("Chests." + UUID + ".X"))== X && (config.getInt("Chests." + UUID + ".Y") == Y) && (config.getInt("Chests." + UUID + ".Z") == Z)){
@@ -34,12 +42,19 @@ public class onLeftCheck implements Listener {
                         return;
                     }
                 }
+                config.set("Chests." + uuid + ".World", world);
                 config.set("Chests." + uuid + ".X", X);
                 config.set("Chests." + uuid + ".Y", Y);
                 config.set("Chests." + uuid + ".Z", Z);
                 chestList.add(uuid.toString());
                 config.set("ChestList", chestList);
                 CustomLootable.getPlugin(CustomLootable.class).saveConfig();
+                BaseComponent Uuid = new TextComponent(uuid.toString());
+                Uuid.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text("点击填充指令到输入框")));
+                Uuid.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/clbind " + uuid + " "));
+                Uuid.setColor(ChatColor.RED);
+                event.getPlayer().spigot().sendMessage(Uuid);
+                event.getPlayer().sendMessage("请输入/clbind <uuid> <id>绑定战利品表");
             }
         }
     }

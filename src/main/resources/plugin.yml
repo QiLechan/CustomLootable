@@ -1,4 +1,18 @@
 name: CustomLootable
 version: '1.0.0'
 main: org.yuezhikong.plugins.CustomLootable
-api-version: '1.17'
+api-version: '1.16'
+author: QiLechan
+commands:
+  clbind:
+    description: 绑定战利品表
+    usage: "/clbind <uuid> <id>"
+    permission: customlootable.*
+    permission-message: 您无权使用此命令。
+permissions:
+  customlootable.admin:
+    default: op
+  customlootable.*:
+    default: op
+    children:
+      customlootable.admin: true

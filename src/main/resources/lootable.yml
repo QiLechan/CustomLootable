@@ -1,0 +1,9 @@
+Loots:
+  #战利品
+  "xxxx":
+    Max: 1
+    Min: 2
+    Refresh: 10
+    items:
+      - "DIAMOND"
+      - "IRON_INGOT"
