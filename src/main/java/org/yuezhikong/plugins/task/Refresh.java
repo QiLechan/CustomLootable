@@ -22,7 +22,6 @@ import java.util.UUID;
 public class Refresh implements Listener {
     private static FileConfiguration config = CustomLootable.getServerconfig();
     private static FileConfiguration lootable = CustomLootable.getLootable();
-    private static Chest chest = null;
     @EventHandler
     public void ServerLoadEvent(ServerLoadEvent event){
         new BukkitRunnable() {
@@ -40,7 +39,7 @@ public class Refresh implements Listener {
                     int Z = config.getInt("Chests." + chestList.get(i) + ".Z");
                     World world = Bukkit.getWorld(java.util.UUID.fromString(Objects.requireNonNull(config.getString("Chests." + chestList.get(i) + ".World"))));
                     Location location = new Location(world, X, Y, Z);
-                    chest = (Chest) location.getBlock().getState();
+                    Chest chest = (Chest) location.getBlock().getState();
                     String BindID = config.getString("Chests." + chestList.get(i) + ".BindID");
                     int Max = lootable.getInt("Loots." + BindID + ".Max");
                     int Min = lootable.getInt("Loots." + BindID + ".Min");
@@ -53,6 +52,6 @@ public class Refresh implements Listener {
                 }
                 Bukkit.broadcastMessage("§a[CustomLootable]§r 战利品刷新完成！");
             }
-        }.runTaskTimer(CustomLootable.getPlugin(CustomLootable.class), 20, 20);
+        }.runTaskTimer(CustomLootable.getPlugin(CustomLootable.class), 20, 200);
     }
 }
