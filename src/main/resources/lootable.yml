@@ -1,9 +1,51 @@
 Loots:
   #战利品
-  "xxxx":
-    Max: 3
-    Min: 2
-    Refresh: 10
+  "A":
     items:
-      - "DIAMOND"
-      - "IRON_INGOT"
+      - "DiamondCustomA"
+      - "DiamondCustomB"
+      - "DiamondCustomC"
+      - "StickCustomA"
+      - "DiamondCustomD"
+      - "StickCustomB"
+      - "StickCustomC"
+  "B":
+    items:
+      - "DiamondCustomA"
+      - "DiamondCustomB"
+      - "DiamondCustomC"
+      - "StickCustomA"
+      - "DiamondCustomD"
+      - "StickCustomB"
+      - "StickCustomC"
+  "C":
+    items:
+      - "DiamondCustomA"
+      - "DiamondCustomB"
+      - "DiamondCustomC"
+      - "StickCustomA"
+      - "DiamondCustomD"
+      - "StickCustomB"
+      - "StickCustomC"
+ItemSettings:
+  DiamondCustomA:
+    ItemID: "DIAMOND"
+    amount: 1
+  DiamondCustomB:
+    ItemID: "DIAMOND"
+    amount: 2
+  DiamondCustomC:
+    ItemID: "DIAMOND"
+    amount: 3
+  StickCustomA:
+    ItemID: "STICK"
+    amount: 1
+  DiamondCustomD:
+    ItemID: "DIAMOND"
+    amount: 4
+  StickCustomB:
+    ItemID: "STICK"
+    amount: 2
+  StickCustomC:
+    ItemID: "STICK"
+    amount: 3

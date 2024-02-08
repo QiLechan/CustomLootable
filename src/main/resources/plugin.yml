@@ -3,6 +3,7 @@ version: '1.0.0'
 main: org.yuezhikong.plugins.CustomLootable
 api-version: '1.16'
 author: QiLechan
+prefix: CustomLootable
 commands:
   clbind:
     description: 绑定战利品表

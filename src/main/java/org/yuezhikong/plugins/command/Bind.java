@@ -18,14 +18,6 @@ public class Bind implements CommandExecutor {
         if (args.length != 2) {
             return false;
         }
-        if (!(lootable.getInt("Loots." + args[1] + ".Max") != 0 && lootable.getInt("Loots." + args[1] + ".Min") != 0 && lootable.getStringList("Loots." + args[1] + ".items").size() != 0)){
-            sender.sendMessage(ChatColor.RED+"lootable.yml配置有误");
-            return true;
-        }
-        if (lootable.getInt("Loots." + args[1] + ".Max") < lootable.getInt("Loots." + args[1] + ".Min")){
-            sender.sendMessage(ChatColor.RED+"Min不能大于Max");
-            return true;
-        }
         List<String> chestList = config.getStringList("ChestList");
         for (String UUID : chestList) {
             if (args[0].equals(UUID)){

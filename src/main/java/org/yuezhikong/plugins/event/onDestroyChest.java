@@ -16,16 +16,16 @@ public class onDestroyChest implements Listener {
     @EventHandler
     public void BlockBreakEvent(BlockBreakEvent event)
     {
-        if(event.getBlock().getType().equals(Material.CHEST)){
-            if (!(event.getPlayer().hasPermission("customlootable.admin") || event.getPlayer().getGameMode().equals(CREATIVE))){
-                event.setCancelled(true);
-            }
-            else {
-                int X = event.getBlock().getX();
-                int Y = event.getBlock().getY();
-                int Z = event.getBlock().getZ();
-                List<String> chestList = config.getStringList("ChestList");
-                for (String UUID : chestList){
+        List<String> chestList = config.getStringList("ChestList");
+        int X = event.getBlock().getX();
+        int Y = event.getBlock().getY();
+        int Z = event.getBlock().getZ();
+        for (String UUID : chestList){
+            if((config.getInt("Chests." + UUID + ".X"))== X && (config.getInt("Chests." + UUID + ".Y") == Y) && (config.getInt("Chests." + UUID + ".Z") == Z)){
+                if (!(event.getPlayer().hasPermission("customlootable.admin") || event.getPlayer().getGameMode().equals(CREATIVE))){
+                    event.setCancelled(true);
+                }
+                else {
                     if ((config.getInt("Chests." + UUID + ".X"))== X && (config.getInt("Chests." + UUID + ".Y") == Y) && (config.getInt("Chests." + UUID + ".Z") == Z)){
                         config.set("Chests." + UUID, null);
                         chestList.removeIf(UUID::equals);
