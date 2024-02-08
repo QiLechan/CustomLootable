@@ -20,12 +20,16 @@ import java.util.concurrent.ScheduledExecutorService;
 public class CustomLootable extends JavaPlugin {
     private static FileConfiguration config = null;
     private static FileConfiguration lootable = null;
-    public static ScheduledExecutorService executor = null;
+    public static ScheduledExecutorService executorA = null;
+    public static ScheduledExecutorService executorB = null;
+    public static ScheduledExecutorService executorC = null;
     @Override
     public void onEnable() {
         this.saveDefaultConfig();
         this.saveResource("lootable.yml", false);
-        executor = Executors.newSingleThreadScheduledExecutor();
+        executorA = Executors.newSingleThreadScheduledExecutor();
+        executorB = Executors.newSingleThreadScheduledExecutor();
+        executorC = Executors.newSingleThreadScheduledExecutor();
         config = getConfig();
         File file = new File(getDataFolder(), "lootable.yml");
         lootable = YamlConfiguration.loadConfiguration(file);
@@ -42,7 +46,9 @@ public class CustomLootable extends JavaPlugin {
         PlayerInteractEvent.getHandlerList().unregister(this);
         BlockBreakEvent.getHandlerList().unregister(this);
         ServerLoadEvent.getHandlerList().unregister(this);
-        executor.shutdownNow();
+        executorA.shutdownNow();
+        executorB.shutdownNow();
+        executorC.shutdownNow();
         getLogger().info("[自定义战利品]卸载成功");
     }
     public static FileConfiguration getServerconfig() {

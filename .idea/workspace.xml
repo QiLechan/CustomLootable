@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff0435d2-50b9-4b24-8234-271a52d8982e" name="更改" comment="提交">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/event/onOpenChest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ff0435d2-50b9-4b24-8234-271a52d8982e" name="更改" comment="修复了一些bug，随机填充物品尚未完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/CustomLootable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/CustomLootable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/command/Bind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/command/Bind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/event/onDestroyChest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/event/onDestroyChest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/task/Refresh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/task/Refresh.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/lootable.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lootable.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707296669181</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="修复了一些bug，随机填充物品尚未完成">
+      <created>1707381263717</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707381263717</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -174,15 +176,21 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始提交" />
     <MESSAGE value="提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交" />
+    <MESSAGE value="修复了一些bug，随机填充物品尚未完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复了一些bug，随机填充物品尚未完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/event/onOpenChest.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/task/Refresh.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/yuezhikong/plugins/task/Refresh.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

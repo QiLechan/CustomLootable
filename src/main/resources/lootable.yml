@@ -3,39 +3,24 @@ Loots:
   "A":
     items:
       - "DiamondCustomA"
-      - "DiamondCustomB"
-      - "DiamondCustomC"
-      - "StickCustomA"
-      - "DiamondCustomD"
-      - "StickCustomB"
-      - "StickCustomC"
+      - "BELLCustomB"
   "B":
     items:
-      - "DiamondCustomA"
-      - "DiamondCustomB"
-      - "DiamondCustomC"
-      - "StickCustomA"
-      - "DiamondCustomD"
-      - "StickCustomB"
-      - "StickCustomC"
+      - "BEEFCustomC"
+      - "BELLCustomB"
   "C":
     items:
-      - "DiamondCustomA"
-      - "DiamondCustomB"
-      - "DiamondCustomC"
       - "StickCustomA"
-      - "DiamondCustomD"
-      - "StickCustomB"
-      - "StickCustomC"
+      - "BELLCustomB"
 ItemSettings:
   DiamondCustomA:
     ItemID: "DIAMOND"
     amount: 1
-  DiamondCustomB:
-    ItemID: "DIAMOND"
+  BELLCustomB:
+    ItemID: "BELL"
     amount: 2
-  DiamondCustomC:
-    ItemID: "DIAMOND"
+  BEEFCustomC:
+    ItemID: "BEEF"
     amount: 3
   StickCustomA:
     ItemID: "STICK"

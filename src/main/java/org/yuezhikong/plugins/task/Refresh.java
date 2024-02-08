@@ -25,7 +25,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import static org.yuezhikong.plugins.CustomLootable.executor;
+import static org.yuezhikong.plugins.CustomLootable.*;
 
 public class Refresh implements Listener {
     private static FileConfiguration config = CustomLootable.getServerconfig();
@@ -52,15 +52,19 @@ public class Refresh implements Listener {
                         int X = config.getInt("Chests." + chestList.get(i) + ".X");
                         int Y = config.getInt("Chests." + chestList.get(i) + ".Y");
                         int Z = config.getInt("Chests." + chestList.get(i) + ".Z");
+                        if (!"A".equals(config.getString("Chests." + chestList.get(i) + ".BindID"))) {
+                            i++;
+                            continue;
+                        }
                         World world = Bukkit.getWorld(java.util.UUID.fromString(Objects.requireNonNull(config.getString("Chests." + chestList.get(i) + ".World"))));
                         Location location = new Location(world, X, Y, Z);
                         Chest chest = (Chest) location.getBlock().getState();
                         chest.getInventory().clear();
                         List<String> items = lootable.getStringList("Loots.A.items");
                         Random rand = new Random();
-                        int randomNum = rand.nextInt(2)+1;
+                        int randomNum = rand.nextInt(2);
                         for (int j = 0; j < randomNum; j++){
-                            randomNum = rand.nextInt(items.size()+1);
+                            randomNum = rand.nextInt(items.size()-1);
                             String item = items.get(randomNum);
                             String ItemID = lootable.getString("ItemSettings." + item + ".ItemID");
                             int amount = lootable.getInt("ItemSettings." + item + ".amount");
@@ -96,33 +100,24 @@ public class Refresh implements Listener {
                         int X = config.getInt("Chests." + chestList.get(i) + ".X");
                         int Y = config.getInt("Chests." + chestList.get(i) + ".Y");
                         int Z = config.getInt("Chests." + chestList.get(i) + ".Z");
+                        if (!"B".equals(config.getString("Chests." + chestList.get(i) + ".BindID"))) {
+                            i++;
+                            continue;
+                        }
                         World world = Bukkit.getWorld(java.util.UUID.fromString(Objects.requireNonNull(config.getString("Chests." + chestList.get(i) + ".World"))));
                         Location location = new Location(world, X, Y, Z);
                         Chest chest = (Chest) location.getBlock().getState();
                         chest.getInventory().clear();
-                        // String BindID = config.getString("Chests." + chestList.get(i) + ".BindID");
                         List<String> items = lootable.getStringList("Loots.B.items");
-                        int max = items.size();
-                        int min = 1;
                         Random rand = new Random();
-                        int maxitems = 4;
-                        int minitems = 1;
-                        int randomNum = rand.nextInt((maxitems - minitems + 1)) + min;
+                        int randomNum = rand.nextInt(2);
                         for (int j = 0; j < randomNum; j++){
-                            randomNum = rand.nextInt(max) + 1;
+                            randomNum = rand.nextInt(items.size()-1);
                             String item = items.get(randomNum);
                             String ItemID = lootable.getString("ItemSettings." + item + ".ItemID");
                             int amount = lootable.getInt("ItemSettings." + item + ".amount");
                             chest.getInventory().addItem(new ItemStack(Material.valueOf(ItemID), amount));
                         }
-                        /**
-                        for (String item : items){
-                            // int amount = (int) Math.floor(Math.random() * (Max - Min + 1) + Min);
-                            String ItemID = lootable.getString("ItemSettings." + item + ".ItemID");
-                            int amount = lootable.getInt("ItemSettings." + item + ".amount");
-                            chest.getInventory().addItem(new ItemStack(Material.valueOf(ItemID), amount));
-                        }
-                         **/
                         i++;
                     }
                     Bukkit.broadcastMessage("§a[CustomLootable]§r 战利品B刷新完成！");
@@ -145,44 +140,41 @@ public class Refresh implements Listener {
                         int X = config.getInt("Chests." + chestList.get(i) + ".X");
                         int Y = config.getInt("Chests." + chestList.get(i) + ".Y");
                         int Z = config.getInt("Chests." + chestList.get(i) + ".Z");
+                        if (!"C".equals(config.getString("Chests." + chestList.get(i) + ".BindID"))) {
+                            i++;
+                            continue;
+                        }
                         World world = Bukkit.getWorld(java.util.UUID.fromString(Objects.requireNonNull(config.getString("Chests." + chestList.get(i) + ".World"))));
                         Location location = new Location(world, X, Y, Z);
                         Chest chest = (Chest) location.getBlock().getState();
                         chest.getInventory().clear();
-                        // String BindID = config.getString("Chests." + chestList.get(i) + ".BindID");
                         List<String> items = lootable.getStringList("Loots.C.items");
-                        int max = items.size();
-                        int min = 1;
                         Random rand = new Random();
-                        int maxitems = 4;
-                        int minitems = 1;
-                        int randomNum = rand.nextInt((maxitems - minitems + 1)) + min;
+                        int randomNum = rand.nextInt(2);
                         for (int j = 0; j < randomNum; j++){
-                            randomNum = rand.nextInt(max) + 1;
+                            //items为空，-1=-1
+                            randomNum = rand.nextInt(items.size()-1);
                             String item = items.get(randomNum);
                             String ItemID = lootable.getString("ItemSettings." + item + ".ItemID");
                             int amount = lootable.getInt("ItemSettings." + item + ".amount");
                             chest.getInventory().addItem(new ItemStack(Material.valueOf(ItemID), amount));
                         }
-                        /**
-                        for (String item : items){
-                            // int amount = (int) Math.floor(Math.random() * (Max - Min + 1) + Min);
-                            String ItemID = lootable.getString("ItemSettings." + item + ".ItemID");
-                            int amount = lootable.getInt("ItemSettings." + item + ".amount");
-                            chest.getInventory().addItem(new ItemStack(Material.valueOf(ItemID), amount));
-                        }
-                         **/
                         i++;
                     }
                     Bukkit.broadcastMessage("§a[CustomLootable]§r 战利品C刷新完成！");
                 }
             }.runTask(CustomLootable.getPlugin(CustomLootable.class));
         };
-        executor.scheduleWithFixedDelay(taskA, 3, 30, TimeUnit.MINUTES);
-        executor.scheduleWithFixedDelay(taskB, 3, 10, TimeUnit.MINUTES);
-        executor.scheduleWithFixedDelay(taskC, 3, 5, TimeUnit.MINUTES);
-        taskA.run();
-        taskB.run();
-        taskC.run();
+        try {
+            taskA.run();
+            taskB.run();
+            taskC.run();
+        } catch (Throwable throwable)
+        {
+            throwable.printStackTrace();
+        }
+        executorA.scheduleWithFixedDelay(taskA, 3, 30, TimeUnit.MINUTES);
+        executorB.scheduleWithFixedDelay(taskB, 3, 10, TimeUnit.MINUTES);
+        executorC.scheduleWithFixedDelay(taskC, 3, 5, TimeUnit.MINUTES);
     }
 }
