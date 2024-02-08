@@ -57,20 +57,16 @@ public class Refresh implements Listener {
                         Chest chest = (Chest) location.getBlock().getState();
                         chest.getInventory().clear();
                         List<String> items = lootable.getStringList("Loots.A.items");
-                        int max = items.size();
-                        int min = 1;
                         Random rand = new Random();
-                        int maxitems = 2;
-                        int minitems = 1;
-                        int randomNum = rand.nextInt((maxitems - minitems + 1)) + min;
+                        int randomNum = rand.nextInt(2)+1;
                         for (int j = 0; j < randomNum; j++){
-                            randomNum = rand.nextInt(max) +1;
+                            randomNum = rand.nextInt(items.size()+1);
                             String item = items.get(randomNum);
                             String ItemID = lootable.getString("ItemSettings." + item + ".ItemID");
                             int amount = lootable.getInt("ItemSettings." + item + ".amount");
                             chest.getInventory().addItem(new ItemStack(Material.valueOf(ItemID), amount));
                         }
-                        /**
+                        /*
                         for (String item : items){
                             // int amount = (int) Math.floor(Math.random() * (Max - Min + 1) + Min);
                             String ItemID = lootable.getString("ItemSettings." + item + ".ItemID");

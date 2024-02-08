@@ -38,14 +38,17 @@ public class onOpenChest implements Listener {
                 case "A":{
                     long time = TimeUnit.MILLISECONDS.toSeconds(AtimestampAfterAdding - System.currentTimeMillis());
                     event.getPlayer().sendMessage("A类战利品箱距离下一次刷新还有" +  time + "秒");
+                    break;
                 }
                 case "B":{
                     long time = TimeUnit.MILLISECONDS.toSeconds(BtimestampAfterAdding - System.currentTimeMillis());
                     event.getPlayer().sendMessage("B类战利品箱距离下一次刷新还有" +  time + "秒");
+                    break;
                 }
                 case "C":{
                     long time = TimeUnit.MILLISECONDS.toSeconds(CtimestampAfterAdding - System.currentTimeMillis());
                     event.getPlayer().sendMessage("C类战利品箱距离下一次刷新还有" +  time + "秒");
+                    break;
                 }
             }
         }
