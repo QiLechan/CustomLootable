@@ -1,5 +1,6 @@
 package org.yuezhikong.plugins.event;
 
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -37,17 +38,17 @@ public class onOpenChest implements Listener {
             switch (BindID){
                 case "A":{
                     long time = TimeUnit.MILLISECONDS.toSeconds(AtimestampAfterAdding - System.currentTimeMillis());
-                    event.getPlayer().sendMessage("A类战利品箱距离下一次刷新还有" +  time + "秒");
+                    event.getPlayer().sendMessage(ChatColor.RED + "A类战利品箱距离下一次刷新还有" + ChatColor.GOLD + time + ChatColor.RED + "秒");
                     break;
                 }
                 case "B":{
                     long time = TimeUnit.MILLISECONDS.toSeconds(BtimestampAfterAdding - System.currentTimeMillis());
-                    event.getPlayer().sendMessage("B类战利品箱距离下一次刷新还有" +  time + "秒");
+                    event.getPlayer().sendMessage(ChatColor.RED + "B类战利品箱距离下一次刷新还有" + ChatColor.GOLD + time + ChatColor.RED + "秒");
                     break;
                 }
                 case "C":{
                     long time = TimeUnit.MILLISECONDS.toSeconds(CtimestampAfterAdding - System.currentTimeMillis());
-                    event.getPlayer().sendMessage("C类战利品箱距离下一次刷新还有" +  time + "秒");
+                    event.getPlayer().sendMessage(ChatColor.RED + "C类战利品箱距离下一次刷新还有" + ChatColor.GOLD + time + ChatColor.RED + "秒");
                     break;
                 }
             }

@@ -2,35 +2,42 @@ Loots:
   #战利品
   "A":
     items:
-      - "DiamondCustomA"
-      - "BELLCustomB"
+      - "DIAMONDCustomA"
+      - "GOLDEN_APPLECustomB"
   "B":
     items:
-      - "BEEFCustomC"
+      - "IRON_BLOCKCustomA"
       - "BELLCustomB"
+      - "IRON_INGOTCustomC"
+      - "StickCustomB"
   "C":
     items:
-      - "StickCustomA"
+      - "DIAMOND_AXECustomA"
       - "BELLCustomB"
+      - "StickCustomB"
+      - "StickCustomC"
 ItemSettings:
-  DiamondCustomA:
+  DIAMONDCustomA:
     ItemID: "DIAMOND"
     amount: 1
-  BELLCustomB:
-    ItemID: "BELL"
+  GOLDEN_APPLECustomB:
+    ItemID: "GOLDEN_APPLE"
     amount: 2
-  BEEFCustomC:
-    ItemID: "BEEF"
+  IRON_BLOCKCustomA:
+    ItemID: "IRON_BLOCK"
     amount: 3
-  StickCustomA:
-    ItemID: "STICK"
+  IRON_INGOTCustomC:
+    ItemID: "IRON_INGOT"
     amount: 1
-  DiamondCustomD:
-    ItemID: "DIAMOND"
-    amount: 4
+  DIAMOND_AXECustomA:
+    ItemID: "DIAMOND_AXE"
+    amount: 1
   StickCustomB:
     ItemID: "STICK"
     amount: 2
   StickCustomC:
     ItemID: "STICK"
     amount: 3
+  BELLCustomB:
+    ItemID: "BELL"
+    amount: 1

@@ -1,5 +1,6 @@
 package org.yuezhikong.plugins.task;
 
+import cn.hutool.core.util.RandomUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -17,10 +18,7 @@ import org.yuezhikong.plugins.CustomLootable;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.List;
-import java.util.Objects;
-import java.util.Random;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -61,11 +59,8 @@ public class Refresh implements Listener {
                         Chest chest = (Chest) location.getBlock().getState();
                         chest.getInventory().clear();
                         List<String> items = lootable.getStringList("Loots.A.items");
-                        Random rand = new Random();
-                        int randomNum = rand.nextInt(2);
-                        for (int j = 0; j < randomNum; j++){
-                            randomNum = rand.nextInt(items.size()-1);
-                            String item = items.get(randomNum);
+                        Set<String> set = RandomUtil.randomEleSet(items, 2);
+                        for (String item : set){
                             String ItemID = lootable.getString("ItemSettings." + item + ".ItemID");
                             int amount = lootable.getInt("ItemSettings." + item + ".amount");
                             chest.getInventory().addItem(new ItemStack(Material.valueOf(ItemID), amount));
@@ -109,11 +104,8 @@ public class Refresh implements Listener {
                         Chest chest = (Chest) location.getBlock().getState();
                         chest.getInventory().clear();
                         List<String> items = lootable.getStringList("Loots.B.items");
-                        Random rand = new Random();
-                        int randomNum = rand.nextInt(2);
-                        for (int j = 0; j < randomNum; j++){
-                            randomNum = rand.nextInt(items.size()-1);
-                            String item = items.get(randomNum);
+                        Set<String> set = RandomUtil.randomEleSet(items, 4);
+                        for (String item : set){
                             String ItemID = lootable.getString("ItemSettings." + item + ".ItemID");
                             int amount = lootable.getInt("ItemSettings." + item + ".amount");
                             chest.getInventory().addItem(new ItemStack(Material.valueOf(ItemID), amount));
@@ -149,12 +141,8 @@ public class Refresh implements Listener {
                         Chest chest = (Chest) location.getBlock().getState();
                         chest.getInventory().clear();
                         List<String> items = lootable.getStringList("Loots.C.items");
-                        Random rand = new Random();
-                        int randomNum = rand.nextInt(2);
-                        for (int j = 0; j < randomNum; j++){
-                            //items为空，-1=-1
-                            randomNum = rand.nextInt(items.size()-1);
-                            String item = items.get(randomNum);
+                        Set<String> set = RandomUtil.randomEleSet(items, 4);
+                        for (String item : set){
                             String ItemID = lootable.getString("ItemSettings." + item + ".ItemID");
                             int amount = lootable.getInt("ItemSettings." + item + ".amount");
                             chest.getInventory().addItem(new ItemStack(Material.valueOf(ItemID), amount));

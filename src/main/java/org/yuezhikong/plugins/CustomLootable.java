@@ -1,5 +1,6 @@
 package org.yuezhikong.plugins;
 
+import org.bstats.bukkit.Metrics;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
@@ -25,6 +26,8 @@ public class CustomLootable extends JavaPlugin {
     public static ScheduledExecutorService executorC = null;
     @Override
     public void onEnable() {
+        int pluginId = 20958;
+        Metrics metrics = new Metrics(this, pluginId);
         this.saveDefaultConfig();
         this.saveResource("lootable.yml", false);
         executorA = Executors.newSingleThreadScheduledExecutor();
