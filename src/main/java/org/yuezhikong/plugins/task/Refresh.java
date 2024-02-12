@@ -54,12 +54,13 @@ public class Refresh implements Listener {
                             i++;
                             continue;
                         }
+                        int randomnum = RandomUtil.randomInt(1, 3);
                         World world = Bukkit.getWorld(java.util.UUID.fromString(Objects.requireNonNull(config.getString("Chests." + chestList.get(i) + ".World"))));
                         Location location = new Location(world, X, Y, Z);
                         Chest chest = (Chest) location.getBlock().getState();
                         chest.getInventory().clear();
                         List<String> items = lootable.getStringList("Loots.A.items");
-                        Set<String> set = RandomUtil.randomEleSet(items, 2);
+                        Set<String> set = RandomUtil.randomEleSet(items, randomnum);
                         for (String item : set){
                             String ItemID = lootable.getString("ItemSettings." + item + ".ItemID");
                             int amount = lootable.getInt("ItemSettings." + item + ".amount");
@@ -99,12 +100,13 @@ public class Refresh implements Listener {
                             i++;
                             continue;
                         }
+                        int randomnum = RandomUtil.randomInt(1, 3);
                         World world = Bukkit.getWorld(java.util.UUID.fromString(Objects.requireNonNull(config.getString("Chests." + chestList.get(i) + ".World"))));
                         Location location = new Location(world, X, Y, Z);
                         Chest chest = (Chest) location.getBlock().getState();
                         chest.getInventory().clear();
                         List<String> items = lootable.getStringList("Loots.B.items");
-                        Set<String> set = RandomUtil.randomEleSet(items, 4);
+                        Set<String> set = RandomUtil.randomEleSet(items, randomnum);
                         for (String item : set){
                             String ItemID = lootable.getString("ItemSettings." + item + ".ItemID");
                             int amount = lootable.getInt("ItemSettings." + item + ".amount");
@@ -136,12 +138,13 @@ public class Refresh implements Listener {
                             i++;
                             continue;
                         }
+                        int randomnum = RandomUtil.randomInt(1, 3);
                         World world = Bukkit.getWorld(java.util.UUID.fromString(Objects.requireNonNull(config.getString("Chests." + chestList.get(i) + ".World"))));
                         Location location = new Location(world, X, Y, Z);
                         Chest chest = (Chest) location.getBlock().getState();
                         chest.getInventory().clear();
                         List<String> items = lootable.getStringList("Loots.C.items");
-                        Set<String> set = RandomUtil.randomEleSet(items, 4);
+                        Set<String> set = RandomUtil.randomEleSet(items, randomnum);
                         for (String item : set){
                             String ItemID = lootable.getString("ItemSettings." + item + ".ItemID");
                             int amount = lootable.getInt("ItemSettings." + item + ".amount");
