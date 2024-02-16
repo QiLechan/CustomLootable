@@ -1,0 +1,11 @@
+<config>
+    <!-- Maven properties could be used in Allatori configuration file. -->
+    <input>
+        <jar in="CustomLootable-1.0-SNAPSHOT.jar" out="CustomLootable-1.0-SNAPSHOT-obfuscated.jar"/>
+    </input>
+    <ignore-classes>
+        <class template="class org.bukkit.*"/>
+    </ignore-classes>
+
+    <property name="log-file" value="log.xml"/>
+</config>
